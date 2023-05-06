@@ -2,7 +2,7 @@ package LinkedList;
 
 public class Double {
     private Node head;
-    private Node tail;
+    private Node last;
 
     private class Node{
         int value;
@@ -29,16 +29,16 @@ public class Double {
     public void insertLast(int val){
         Node node = new Node(val);
         node.next=null;
-        tail=head;
+        last=head;
         if (head==null){
             insertFirst(val);
             return;
         }
-        while (tail.next!=null){
-            tail=tail.next;
+        while (last.next!=null){
+            last=last.next;
         }
-        tail.next=node;
-        node.prev=tail;
+        last.next=node;
+        node.prev=last;
 
     }
     public void insert(int after , int val){
@@ -99,15 +99,15 @@ public class Double {
         Node temp=head;
         while(temp!=null){
             System.out.print(temp.value+"->");
-            tail=temp;
+//            last=temp;
             temp=temp.next;
         }
         System.out.println("End");
-            while (tail != null) {
-                System.out.print(tail.value + "->");
-                tail = tail.prev;
-            }
-            System.out.println("Start");
+//            while (last != null) {
+//                System.out.print(last.value + "->");
+//                last = last.prev;
+//            }
+//            System.out.println("Start");
     }
     public static void main(String[] args) {
         Double list = new Double();
